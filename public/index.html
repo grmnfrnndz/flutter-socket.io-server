@@ -13,6 +13,8 @@
     <script>
         var socket = io();
 
+        // socket.emit('mensaje', {nombre: 'German Web'});
+
         socket.on('connect', function(){
             console.log('Conectado al servidor xxx');
         });
@@ -21,11 +23,19 @@
             console.log('Desconectado del servidor :');
         });
 
-        socket.emit('mensaje', {nombre: 'German'});
-
         socket.on('mensaje', function(payload) {
             console.log('escuchando al servidor: ', payload);
         });
+
+        socket.on('nuevo-mensaje', function(payload) {
+            console.log('escuchando al servidor: ', payload);
+        });
+
+        socket.on('active-bands', function(bands) {
+            console.clear;
+            console.table(bands);
+        });
+
 
     </script>
 </body>

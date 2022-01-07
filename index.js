@@ -21,5 +21,5 @@ app.use(express.static(publicPath));
 server.listen(process.env.PORT, (error_x) => {
     if (error_x) throw new Error(error_x);
 
-    console.log('Servidor corriendo en puerto !!!!: ', process.env.PORT);
+    console.log('Servidor Express: PUERTO ', process.env.PORT);
 });
